@@ -374,7 +374,7 @@ body {
   }
 
   .screen {
-    padding: 24px 18px;
+    padding: 24px 14px;
   }
 
   .boot-box {
@@ -383,19 +383,23 @@ body {
   }
 
   .top-pill {
-  left: 12px;
-  right: 12px;
-  top: 12px;
-  font-size: 6.5px;
-  letter-spacing: 1.5px;
-  padding: 6px 8px;
-  text-align: center;
-}
+    left: 12px;
+    right: 12px;
+    top: 12px;
+    font-size: 6.5px;
+    letter-spacing: 1.5px;
+    padding: 6px 8px;
+    text-align: center;
+  }
 
   .mini-title,
   .system-label {
-    letter-spacing: 4px;
-    font-size: 10px;
+    letter-spacing: 3px;
+    font-size: 8px;
+  }
+
+  .terminal-title {
+    font-size: clamp(21px, 7vw, 32px);
   }
 
   .loading-text {
@@ -427,24 +431,49 @@ body {
     letter-spacing: 2px;
   }
 
+  .gradient-title {
+    font-size: clamp(28px, 8vw, 42px);
+    margin-bottom: 40px;
+  }
+
   .countdown {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .countdown strong {
+    font-size: clamp(28px, 11vw, 52px);
   }
 
   .countdown span {
-    letter-spacing: 5px;
-    font-size: 11px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-size: 8px;
   }
 
   .locked-pill {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    padding: 10px 14px;
+  }
+
+  .big-birthday {
+    font-size: clamp(54px, 16vw, 86px);
+  }
+
+  .subtitle {
+    font-size: 15px;
   }
 
   .main-btn {
     width: 100%;
     padding: 20px;
     font-size: 18px;
+  }
+
+  .prologue-title {
+    font-size: clamp(30px, 9vw, 48px);
+    margin-bottom: 70px;
   }
 }
