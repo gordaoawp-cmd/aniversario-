@@ -1,118 +1,216 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Birthday Surprise System</title>
 
   <link rel="stylesheet" href="style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@400;600;800&display=swap" 
+    rel="stylesheet"
+  >
 </head>
+
 <body>
 
   <div class="particles"></div>
+  <div id="confettiContainer"></div>
 
   <!-- TELA 1: BOOT -->
-<section id="bootScreen" class="screen active">
-  <div class="boot-box">
-    <p class="mini-title"> LÁ PICA DE MORCEGO  / v26.0</p>
 
-    <h1 class="terminal-title">BIRTHDAY SURPRISE SYSTEM</h1>
+  <section id="bootScreen" class="screen active">
+    <div class="boot-box">
+      <p class="mini-title">LÁ PICA DE MORCEGO / v26.0</p>
 
-    <p class="loading-text" id="bootStatus">
-      Inicializando sistema<span class="blink">_</span>
-    </p>
 
-    <div class="progress-area">
-      <div class="progress-bar">
-        <div class="progress-fill" id="bootProgress"></div>
-      </div>
-      <span id="progressNumber">0%</span>
+  <h1 class="terminal-title">
+    BIRTHDAY SURPRISE SYSTEM
+  </h1>
+
+  <p class="loading-text" id="bootStatus">
+    Inicializando sistema<span class="blink">_</span>
+  </p>
+
+  <div class="progress-area">
+    <div class="progress-bar">
+      <div class="progress-fill" id="bootProgress"></div>
     </div>
 
-    <div class="boot-lines" id="bootLines"></div>
-
-    <p class="entering hidden" id="enteringText">
-      ENTRANDO NA INTERFACE PRINCIPAL...
-    </p>
+    <span id="progressNumber">0%</span>
   </div>
-</section>
+
+  <div class="boot-lines" id="bootLines"></div>
+
+  <p class="entering hidden" id="enteringText">
+    ENTRANDO NA INTERFACE PRINCIPAL...
+  </p>
+</div>
+
+
+  </section>
 
   <!-- TELA 2: CONTAGEM -->
+
   <section id="countdownScreen" class="screen">
-    <div class="top-pill">● BIRTHDAY SURPRISE SYSTEM · AWAITING UNLOCK</div>
-
-    <div class="center-content">
-      <p class="system-label">LÁ PICA DE MORCEGO v26.0 · COUNTDOWN MODE</p>
-      <h2 class="gradient-title">Algo especial está esperando por você</h2>
-
-      <div class="countdown">
-        <div>
-          <strong id="days">00</strong>
-          <span>DIAS</span>
-        </div>
-        <div>
-          <strong id="hours">00</strong>
-          <span>HORAS</span>
-        </div>
-        <div>
-          <strong id="minutes">00</strong>
-          <span>MIN</span>
-        </div>
-        <div>
-          <strong id="seconds">00</strong>
-          <span>SEG</span>
-        </div>
-      </div>
-
-      <div class="locked-pill">● ACESSO BLOQUEADO · AGUARDANDO O GRANDE DIA</div>
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · AWAITING UNLOCK
     </div>
+
+
+<div class="center-content">
+  <p class="system-label">
+    LÁ PICA DE MORCEGO v26.0 · COUNTDOWN MODE
+  </p>
+
+  <h2 class="gradient-title">
+    Algo especial está esperando por você
+  </h2>
+
+  <div class="countdown">
+    <div>
+      <strong id="days">00</strong>
+      <span>DIAS</span>
+    </div>
+
+    <div>
+      <strong id="hours">00</strong>
+      <span>HORAS</span>
+    </div>
+
+    <div>
+      <strong id="minutes">00</strong>
+      <span>MIN</span>
+    </div>
+
+    <div>
+      <strong id="seconds">00</strong>
+      <span>SEG</span>
+    </div>
+  </div>
+
+  <div class="locked-pill">
+    ● ACESSO BLOQUEADO · AGUARDANDO O GRANDE DIA
+  </div>
+</div>
+
+
   </section>
 
   <!-- TELA 3: FELIZ ANIVERSÁRIO -->
-  <section id="birthdayScreen" class="screen">
-    <div class="top-pill">● BIRTHDAY SURPRISE SYSTEM · UNLOCKED</div>
 
-    <div class="center-content">
-      <p class="system-label">O DIA CHEGOU</p>
-      <h2 class="big-birthday">
-        Feliz<br>
-        Aniversário
-      </h2>
-
-      <p class="subtitle">
-        Sua surpresa foi cuidadosamente montada peça por peça.
-        Preparado pra ligar o sistema?
-      </p>
-
-      <button class="main-btn" onclick="startSurprise()">
-        🎁 Começar sua surpresa
-      </button>
+  <section id="birthdayScreen" class="screen birthday-screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · UNLOCKED
     </div>
+
+
+<div class="birthday-card">
+  <p class="system-label">
+    O DIA CHEGOU
+  </p>
+
+  <h2 class="big-birthday">
+    Feliz<br>
+    Aniversário
+  </h2>
+
+  <p class="subtitle">
+    O sistema foi desbloqueado com sucesso.
+    Hoje é o seu dia, e essa surpresa foi feita especialmente pra você.
+  </p>
+
+  <button class="main-btn" onclick="startSurprise()">
+    🎁 Começar sua surpresa
+  </button>
+</div>
+
+
   </section>
 
   <!-- TELA 4: PRÓLOGO -->
+
   <section id="prologueScreen" class="screen">
-    <div class="top-pill">● BIRTHDAY SURPRISE SYSTEM · PROLOGUE</div>
-
-    <div class="center-content">
-      <p class="system-label">CAPÍTULO 00 · PRÓLOGO</p>
-
-      <p class="fade-text">Hoje não é apenas mais um aniversário.</p>
-
-      <h2 class="prologue-title">
-        Hoje é o dia de uma pessoa muito importante.
-      </h2>
-
-      <button class="outline-btn" onclick="nextChapter()">
-        CONTINUAR ›
-      </button>
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · PROLOGUE
     </div>
+
+
+<div class="center-content">
+  <p class="system-label">
+    CAPÍTULO 00 · PRÓLOGO
+  </p>
+
+  <p 
+    class="fade-text type-word" 
+    data-text="Hoje não é apenas mais um aniversário."
+  ></p>
+
+  <h2 
+    class="prologue-title type-word" 
+    data-text="Hoje é o dia de uma pessoa muito importante."
+  ></h2>
+
+  <button 
+    class="outline-btn hidden-btn" 
+    id="prologueBtn" 
+    onclick="nextChapter()"
+  >
+    CONTINUAR ›
+  </button>
+</div>
+
+
+  </section>
+
+  <!-- TELA 5: CAPÍTULO 01 -->
+
+  <section id="chapterOneScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · CHAPTER 01
+    </div>
+
+
+<div class="chapter-container">
+  <p class="system-label">
+    CAPÍTULO 01 · PRIMEIRA MENSAGEM
+  </p>
+
+  <div class="chapter-card">
+    <div class="chapter-number">
+      01
+    </div>
+
+    <h2 class="chapter-title">
+      Antes de qualquer coisa...
+    </h2>
+
+    <p class="chapter-text">
+      Esse site foi feito especialmente para você.
+      Cada detalhe aqui foi pensado para transformar esse dia em algo diferente,
+      bonito e impossível de esquecer.
+    </p>
+
+    <p class="chapter-text">
+      Hoje o sistema não está carregando arquivos comuns...
+      está carregando carinho, lembranças e uma surpresa feita de coração.
+    </p>
+  </div>
+
+  <button class="outline-btn" onclick="nextChapterTwo()">
+    CONTINUAR ›
+  </button>
+</div>
+
+
   </section>
 
   <script src="script.js"></script>
+
 </body>
 </html>

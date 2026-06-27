@@ -2,6 +2,7 @@ const bootScreen = document.getElementById("bootScreen");
 const countdownScreen = document.getElementById("countdownScreen");
 const birthdayScreen = document.getElementById("birthdayScreen");
 const prologueScreen = document.getElementById("prologueScreen");
+const chapterOneScreen = document.getElementById("chapterOneScreen");
 
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
@@ -13,16 +14,14 @@ const bootProgress = document.getElementById("bootProgress");
 const progressNumber = document.getElementById("progressNumber");
 const bootStatus = document.getElementById("bootStatus");
 const enteringText = document.getElementById("enteringText");
+const confettiContainer = document.getElementById("confettiContainer");
 
-/*
-  MUDA A DATA AQUI:
+const testMode = true;
 
-  new Date(ANO, MÊS - 1, DIA, HORA, MINUTO, SEGUNDO)
-
-  Exemplo abaixo:
-  10 de julho de 2026 às 00:00
-*/
-const birthdayDate = new Date(2026, 6, 10, 0, 0, 0);
+let birthdayDate;
+let countdownInterval;
+let currentBootStep = 0;
+let prologueAlreadyTyped = false;
 
 const bootSteps = [
   { text: "Inicializando núcleo do sistema...", status: "[OK]", progress: 8 },
@@ -37,7 +36,13 @@ const bootSteps = [
   { text: "Sistema pronto para inicialização.", status: "[READY]", progress: 100 },
 ];
 
-let currentBootStep = 0;
+function showScreen(screen) {
+  document.querySelectorAll(".screen").forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  screen.classList.add("active");
+}
 
 function startBootSequence() {
   const interval = setInterval(() => {
@@ -56,7 +61,6 @@ function startBootSequence() {
 
     bootProgress.style.width = step.progress + "%";
     progressNumber.textContent = step.progress + "%";
-
     bootStatus.innerHTML = `${step.text}<span class="blink">_</span>`;
 
     currentBootStep++;
@@ -72,17 +76,19 @@ function startBootSequence() {
 
       setTimeout(() => {
         showScreen(countdownScreen);
+        startCountdown();
       }, 2300);
     }
   }, 650);
 }
 
-function showScreen(screen) {
-  document.querySelectorAll(".screen").forEach((item) => {
-    item.classList.remove("active");
-  });
+function startCountdown() {
+  birthdayDate = testMode
+    ? new Date(Date.now() + 10000)
+    : new Date(2026, 6, 10, 0, 0, 0);
 
-  screen.classList.add("active");
+  updateCountdown();
+  countdownInterval = setInterval(updateCountdown, 1000);
 }
 
 function updateCountdown() {
@@ -90,7 +96,14 @@ function updateCountdown() {
   const distance = birthdayDate - now;
 
   if (distance <= 0) {
+    daysEl.textContent = "00";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+
+    clearInterval(countdownInterval);
     showScreen(birthdayScreen);
+    startConfetti();
     return;
   }
 
@@ -105,14 +118,78 @@ function updateCountdown() {
   secondsEl.textContent = String(seconds).padStart(2, "0");
 }
 
+function startConfetti() {
+  if (!confettiContainer) return;
+
+  confettiContainer.innerHTML = "";
+
+  const colors = ["#00eaff", "#8d2cff", "#ffffff", "#00ff99", "#ff4fd8"];
+
+  for (let i = 0; i < 120; i++) {
+    const piece = document.createElement("div");
+    piece.classList.add("confetti");
+
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDuration = 2.5 + Math.random() * 2.5 + "s";
+    piece.style.animationDelay = Math.random() * 0.8 + "s";
+    piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    confettiContainer.appendChild(piece);
+
+    setTimeout(() => {
+      piece.remove();
+    }, 6000);
+  }
+}
+
+function typeText(element, text, speed = 45) {
+  return new Promise((resolve) => {
+    element.textContent = "";
+    const words = text.split(" ");
+    let index = 0;
+
+    const interval = setInterval(() => {
+      element.textContent += (index === 0 ? "" : " ") + words[index];
+      index++;
+
+      if (index >= words.length) {
+        clearInterval(interval);
+        resolve();
+      }
+    }, speed * 3);
+  });
+}
+
+async function startPrologueTyping() {
+  if (prologueAlreadyTyped) return;
+  prologueAlreadyTyped = true;
+
+  const elements = document.querySelectorAll(".type-word");
+  const btn = document.getElementById("prologueBtn");
+
+  btn.classList.remove("show");
+
+  for (const el of elements) {
+    const text = el.getAttribute("data-text");
+    await typeText(el, text, 45);
+    await new Promise((resolve) => setTimeout(resolve, 450));
+  }
+
+  btn.classList.add("show");
+}
+
 function startSurprise() {
   showScreen(prologueScreen);
+  startPrologueTyping();
 }
 
 function nextChapter() {
-  alert("Aqui entra o Capítulo 01, mano. A próxima parte a gente faz agora.");
+  showScreen(chapterOneScreen);
+}
+
+function nextChapterTwo() {
+  alert("Aqui entra o Capítulo 02 com vídeo, mano.");
 }
 
 startBootSequence();
-updateCountdown();
-setInterval(updateCountdown, 1000);
