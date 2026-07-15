@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Birthday Surprise System</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@400;600;800&display=swap" 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@400;600;800&display=swap"
     rel="stylesheet"
-  >
+  />
 </head>
 
 <body>
-
   <div class="particles"></div>
   <div id="confettiContainer"></div>
 
@@ -26,33 +34,41 @@
 
   <section id="bootScreen" class="screen active">
     <div class="boot-box">
-      <p class="mini-title">LÁ PICA DE MORCEGO / v26.0</p>
+      <p class="mini-title">
+        LÁ PICA DE MORCEGO / v26.0
+      </p>
 
+      <h1 class="terminal-title">
+        BIRTHDAY SURPRISE SYSTEM
+      </h1>
 
-  <h1 class="terminal-title">
-    BIRTHDAY SURPRISE SYSTEM
-  </h1>
+      <p class="loading-text" id="bootStatus">
+        Inicializando sistema<span class="blink">_</span>
+      </p>
 
-  <p class="loading-text" id="bootStatus">
-    Inicializando sistema<span class="blink">_</span>
-  </p>
+      <div class="progress-area">
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            id="bootProgress"
+          ></div>
+        </div>
 
-  <div class="progress-area">
-    <div class="progress-bar">
-      <div class="progress-fill" id="bootProgress"></div>
+        <span id="progressNumber">0%</span>
+      </div>
+
+      <div
+        class="boot-lines"
+        id="bootLines"
+      ></div>
+
+      <p
+        class="entering hidden"
+        id="enteringText"
+      >
+        ENTRANDO NA INTERFACE PRINCIPAL...
+      </p>
     </div>
-
-    <span id="progressNumber">0%</span>
-  </div>
-
-  <div class="boot-lines" id="bootLines"></div>
-
-  <p class="entering hidden" id="enteringText">
-    ENTRANDO NA INTERFACE PRINCIPAL...
-  </p>
-</div>
-
-
   </section>
 
   <!-- TELA 2: CONTAGEM -->
@@ -62,75 +78,77 @@
       ● BIRTHDAY SURPRISE SYSTEM · AWAITING UNLOCK
     </div>
 
+    <div class="center-content">
+      <p class="system-label">
+        LÁ PICA DE MORCEGO v26.0 · COUNTDOWN MODE
+      </p>
 
-<div class="center-content">
-  <p class="system-label">
-    LÁ PICA DE MORCEGO v26.0 · COUNTDOWN MODE
-  </p>
+      <h2 class="gradient-title">
+        Algo especial está esperando por você
+      </h2>
 
-  <h2 class="gradient-title">
-    Algo especial está esperando por você
-  </h2>
+      <div class="countdown">
+        <div>
+          <strong id="days">00</strong>
+          <span>DIAS</span>
+        </div>
 
-  <div class="countdown">
-    <div>
-      <strong id="days">00</strong>
-      <span>DIAS</span>
+        <div>
+          <strong id="hours">00</strong>
+          <span>HORAS</span>
+        </div>
+
+        <div>
+          <strong id="minutes">00</strong>
+          <span>MIN</span>
+        </div>
+
+        <div>
+          <strong id="seconds">00</strong>
+          <span>SEG</span>
+        </div>
+      </div>
+
+      <div class="locked-pill">
+        ● ACESSO BLOQUEADO · AGUARDANDO O GRANDE DIA
+      </div>
     </div>
-
-    <div>
-      <strong id="hours">00</strong>
-      <span>HORAS</span>
-    </div>
-
-    <div>
-      <strong id="minutes">00</strong>
-      <span>MIN</span>
-    </div>
-
-    <div>
-      <strong id="seconds">00</strong>
-      <span>SEG</span>
-    </div>
-  </div>
-
-  <div class="locked-pill">
-    ● ACESSO BLOQUEADO · AGUARDANDO O GRANDE DIA
-  </div>
-</div>
-
-
   </section>
 
   <!-- TELA 3: FELIZ ANIVERSÁRIO -->
 
-  <section id="birthdayScreen" class="screen birthday-screen">
+  <section
+    id="birthdayScreen"
+    class="screen birthday-screen"
+  >
     <div class="top-pill">
       ● BIRTHDAY SURPRISE SYSTEM · UNLOCKED
     </div>
 
+    <div class="birthday-card">
+      <p class="system-label">
+        O DIA CHEGOU
+      </p>
 
-<div class="birthday-card">
-  <p class="system-label">
-    O DIA CHEGOU
-  </p>
+      <h2 class="big-birthday">
+        Feliz<br />
+        Aniversário
+      </h2>
 
-  <h2 class="big-birthday">
-    Feliz<br>
-    Aniversário
-  </h2>
+      <p class="subtitle">
+        O sistema foi desbloqueado com sucesso.
+        Hoje é o seu dia, e essa surpresa foi feita
+        especialmente para você.
+      </p>
 
-  <p class="subtitle">
-    O sistema foi desbloqueado com sucesso.
-    Hoje é o seu dia, e essa surpresa foi feita especialmente pra você.
-  </p>
-
-  <button class="main-btn" onclick="startSurprise()">
-    🎁 Começar sua surpresa
-  </button>
-</div>
-
-
+      <button
+        class="main-btn"
+        type="button"
+        onclick="startSurprise()"
+      >
+        🎁 Começar sua surpresa
+      </button>
+    </div>
   </section>
 
   <!-- TELA 4: PRÓLOGO -->
@@ -140,32 +158,30 @@
       ● BIRTHDAY SURPRISE SYSTEM · PROLOGUE
     </div>
 
+    <div class="center-content">
+      <p class="system-label">
+        CAPÍTULO 00 · PRÓLOGO
+      </p>
 
-<div class="center-content">
-  <p class="system-label">
-    CAPÍTULO 00 · PRÓLOGO
-  </p>
+      <p
+        class="fade-text type-word"
+        data-text="Hoje não é apenas mais um aniversário."
+      ></p>
 
-  <p 
-    class="fade-text type-word" 
-    data-text="Hoje não é apenas mais um aniversário."
-  ></p>
+      <h2
+        class="prologue-title type-word"
+        data-text="Hoje é o dia de uma pessoa muito importante."
+      ></h2>
 
-  <h2 
-    class="prologue-title type-word" 
-    data-text="Hoje é o dia de uma pessoa muito importante."
-  ></h2>
-
-  <button 
-    class="outline-btn hidden-btn" 
-    id="prologueBtn" 
-    onclick="nextChapter()"
-  >
-    CONTINUAR ›
-  </button>
-</div>
-
-
+      <button
+        class="outline-btn hidden-btn"
+        id="prologueBtn"
+        type="button"
+        onclick="nextChapter()"
+      >
+        CONTINUAR ›
+      </button>
+    </div>
   </section>
 
   <!-- TELA 5: CAPÍTULO 01 -->
@@ -175,42 +191,1039 @@
       ● BIRTHDAY SURPRISE SYSTEM · CHAPTER 01
     </div>
 
+    <div class="chapter-container">
+      <p class="system-label">
+        CAPÍTULO 01 · PRIMEIRA MENSAGEM
+      </p>
 
-<div class="chapter-container">
-  <p class="system-label">
-    CAPÍTULO 01 · PRIMEIRA MENSAGEM
-  </p>
+      <div class="chapter-card">
+        <div class="chapter-number">
+          01
+        </div>
 
-  <div class="chapter-card">
-    <div class="chapter-number">
-      01
+        <h2 class="chapter-title">
+          Antes de qualquer coisa...
+        </h2>
+
+        <p class="chapter-text">
+          Esse site foi feito especialmente para você.
+          Cada detalhe aqui foi pensado para transformar
+          esse dia em algo diferente, bonito e impossível
+          de esquecer.
+        </p>
+
+        <p class="chapter-text">
+          Hoje o sistema não está carregando arquivos comuns...
+          está carregando carinho, lembranças e uma surpresa
+          feita de coração.
+        </p>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="nextChapterTwo()"
+      >
+        CONTINUAR ›
+      </button>
     </div>
-
-    <h2 class="chapter-title">
-      Antes de qualquer coisa...
-    </h2>
-
-    <p class="chapter-text">
-      Esse site foi feito especialmente para você.
-      Cada detalhe aqui foi pensado para transformar esse dia em algo diferente,
-      bonito e impossível de esquecer.
-    </p>
-
-    <p class="chapter-text">
-      Hoje o sistema não está carregando arquivos comuns...
-      está carregando carinho, lembranças e uma surpresa feita de coração.
-    </p>
-  </div>
-
-  <button class="outline-btn" onclick="nextChapterTwo()">
-    CONTINUAR ›
-  </button>
-</div>
-
-
   </section>
 
-  <script src="script.js"></script>
+  <!-- TELA 6: PRIMEIRO VÍDEO -->
 
+  <section id="chapterTwoScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · CHAPTER 02
+    </div>
+
+    <div class="video-container">
+      <p class="system-label">
+        CAPÍTULO 02 · PRIMEIRA MEMÓRIA
+      </p>
+
+      <h2 class="video-title">
+        Aperte o play e deixa o sistema rodar...
+      </h2>
+
+      <div class="video-card">
+        <video
+          id="firstVideo"
+          class="surprise-video"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="./assets/video1.mp4.MOV"
+            type="video/mp4"
+          />
+
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+
+      <p class="video-text">
+        Algumas lembranças não cabem apenas em palavras.
+        Por isso, preparei esse primeiro vídeo especialmente
+        para você.
+      </p>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="nextChapterThree()"
+      >
+        CONTINUAR ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 7: INTRODUÇÃO AO PRIMEIRO PRESENTE -->
+
+  <section id="chapterThreeScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · CHAPTER 03
+    </div>
+
+    <div class="chapter-container">
+      <p class="system-label">
+        CAPÍTULO 03 · ARQUIVO SECRETO
+      </p>
+
+      <div class="chapter-card">
+        <div class="chapter-number">
+          03
+        </div>
+
+        <h2 class="chapter-title">
+          O sistema encontrou uma caixa misteriosa...
+        </h2>
+
+        <p class="chapter-text">
+          Um arquivo especial foi detectado em uma área
+          protegida do sistema.
+        </p>
+
+        <p class="chapter-text">
+          Para descobrir o conteúdo, será necessário abrir
+          a caixa e aguardar o resultado da roleta.
+        </p>
+
+        <p class="chapter-text">
+          O primeiro presente está esperando para ser desbloqueado.
+        </p>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openCaseScreen()"
+      >
+        ACESSAR CAIXA SECRETA ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 8: CAIXA E ROLETA -->
+
+  <section id="caseScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · MYSTERY CASE
+    </div>
+
+    <div class="case-container">
+      <p class="system-label">
+        ARQUIVO SECRETO · PRESENTE 01
+      </p>
+
+      <h2 class="case-title">
+        Uma caixa misteriosa foi encontrada
+      </h2>
+
+      <p class="case-text">
+        Clique na caixa para iniciar o processo de desbloqueio.
+      </p>
+
+      <button
+        id="caseButton"
+        class="case-box"
+        type="button"
+        onclick="openCase()"
+      >
+        <span class="case-lock">🔒</span>
+
+        <strong>
+          CAIXA SECRETA
+        </strong>
+
+        <small>
+          CLIQUE PARA ABRIR
+        </small>
+      </button>
+
+      <div
+        id="rouletteArea"
+        class="roulette-area hidden"
+      >
+        <div class="roulette-pointer"></div>
+
+        <div class="roulette-window">
+          <div
+            id="rouletteTrack"
+            class="roulette-track"
+          ></div>
+        </div>
+
+        <p
+          id="rouletteStatus"
+          class="roulette-status"
+        >
+          Preparando abertura...
+        </p>
+      </div>
+
+      <div
+        id="prizeResult"
+        class="prize-result hidden"
+      >
+        <p class="rare-label">
+          ✨ ITEM RARO ENCONTRADO ✨
+        </p>
+
+        <div class="prize-card secret-prize-card">
+          <div class="secret-gift-icon">
+            🎁
+          </div>
+
+          <h3>
+            RGB identificado
+          </h3>
+
+          <p>
+            O componente RGB foi localizado com sucesso.
+            Vá para a próxima aba para revelar o segundo presente.
+          </p>
+        </div>
+
+        <button
+          class="outline-btn"
+          type="button"
+          onclick="openFirstGiftReveal()"
+        >
+          IR PARA A PRÓXIMA ABA ›
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 9: REVELAÇÃO DO PRIMEIRO PRESENTE -->
+
+  <section id="firstGiftRevealScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · GIFT REVEAL 01
+    </div>
+
+    <div class="gift-screen-container">
+      <p class="system-label">
+        CAPÍTULO 04 · ARQUIVO REVELADO
+      </p>
+
+      <h2 class="gift-screen-title">
+        Presente secreto desbloqueado
+      </h2>
+
+      <div class="single-gift-card">
+        <div class="single-gift-image-box">
+          <img
+            src="./assets/presente1.png"
+            alt="Kit com 4 Prism 6 Pro"
+            class="single-gift-image"
+          />
+        </div>
+
+        <span class="gift-file-label">
+          ITEM RARO · PRESENTE 01
+        </span>
+
+        <h3>
+          Kit com 4 Prism 6 Pro
+        </h3>
+
+        <p>
+          O primeiro presente foi revelado com sucesso:
+          um kit com 4 Prism 6 Pro preparado especialmente para você.
+        </p>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openSecondVideo()"
+      >
+        ASSISTIR PRÓXIMO VÍDEO ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 10: SEGUNDO VÍDEO -->
+
+  <section id="secondVideoScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · VIDEO FILE 02
+    </div>
+
+    <div class="video-container">
+      <p class="system-label">
+        CAPÍTULO 05 · SEGUNDA MEMÓRIA
+      </p>
+
+      <h2 class="video-title">
+        Mais um arquivo de vídeo foi encontrado...
+      </h2>
+
+      <div class="video-card">
+        <video
+          id="secondVideo"
+          class="surprise-video"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="./assets/video2.mp4.MOV"
+            type="video/mp4"
+          />
+
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+
+      <p class="video-text">
+        Aperte o play e assista com calma.
+        O sistema ainda guarda mais uma surpresa.
+      </p>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openSecondGiftIntro()"
+      >
+        CONTINUAR ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 11: FOTO E MENSAGEM ESPECIAL -->
+
+  <section id="secondGiftIntroScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · SPECIAL MESSAGE
+    </div>
+
+    <div class="photo-message-container">
+      <p class="system-label">
+        CAPÍTULO 06 · NOSSA AMIZADE
+      </p>
+
+      <div class="photo-message-card">
+        <div class="photo-box">
+          <img
+            src="./assets/nossa-foto.jpeg"
+            alt="Nossa foto"
+            class="special-photo"
+          />
+        </div>
+
+        <div class="message-box">
+          <div class="chapter-number">
+            06
+          </div>
+
+          <h2 class="chapter-title">
+            Uma mensagem pra você...
+          </h2>
+
+          <p class="chapter-text">
+            Então, nego, só tenho a te agradecer por todos os momentos
+            que a gente viveu. ❤️ Sempre foram fodas e marcantes!
+            As conversas que nós sempre tivemos, mesmo estando distantes.
+          </p>
+
+          <p class="chapter-text">
+            A distância até deu uma interferida entre nós dois, mas,
+            mesmo longe, a gente sempre se ajudou como quando estava junto,
+            e isso eu acho muito foda. 🤝
+          </p>
+
+          <p class="chapter-text">
+            Nossa amizade, independente do que esteja acontecendo,
+            sempre fez com que a gente ajudasse um ao outro no que podia.
+            Sou muito grato por isso! 🙏
+          </p>
+
+          <p class="chapter-text">
+            Espero que essa nossa relação continue por muitos e muitos anos,
+            e que você continue sendo essa pessoa incrível que você é. 💙
+          </p>
+
+          <p class="chapter-text">
+            Te amo, nego! ❤️
+          </p>
+        </div>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openThirdVideo()"
+      >
+        ASSISTIR MAIS UM VÍDEO ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 12: TERCEIRO VÍDEO -->
+
+  <section id="thirdVideoScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · VIDEO FILE 03
+    </div>
+
+    <div class="video-container">
+      <p class="system-label">
+        CAPÍTULO 07 · TERCEIRA MEMÓRIA
+      </p>
+
+      <h2 class="video-title">
+        Mais uma lembrança foi encontrada...
+      </h2>
+
+      <div class="video-card">
+        <video
+          id="thirdVideo"
+          class="surprise-video"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="./assets/video3.mp4.MOV"
+            type="video/mp4"
+          />
+
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+
+      <p class="video-text">
+        Algumas lembranças merecem ser guardadas para sempre.
+        Aperte o play e aproveite esse momento.
+      </p>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openSecondMoneyCaseScreen()"
+      >
+        VER RGB ENCONTRADO ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 13: SEGUNDA ABERTURA ESTILO GTA -->
+
+  <section id="secondCaseScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · MONEY DROP
+    </div>
+
+    <div class="case-container">
+      <p class="system-label">
+        ARQUIVO SECRETO · PRESENTE 02
+      </p>
+
+      <h2 class="case-title">
+        Um RGB foi encontrado no sistema...
+      </h2>
+
+      <p class="case-text">
+        Um novo componente RGB foi detectado nos arquivos secretos.
+        Clique para iniciar a análise RGB e desbloquear o segundo presente.
+      </p>
+
+      <button
+        id="moneyCaseButton"
+        class="money-case-box"
+        type="button"
+        onclick="openSecondMoneyCase()"
+      >
+        <div
+          class="rgb-found-icon"
+          aria-hidden="true"
+        >
+          🌈
+        </div>
+
+        <strong>
+          RGB FOI ENCONTRADO
+        </strong>
+
+        <small>
+          CLIQUE PARA ANALISAR
+        </small>
+      </button>
+
+      <div
+        id="secondRouletteArea"
+        class="roulette-area hidden"
+      >
+        <div class="roulette-pointer"></div>
+
+        <div class="roulette-window">
+          <div
+            id="secondRouletteTrack"
+            class="roulette-track"
+          ></div>
+        </div>
+
+        <p
+          id="secondRouletteStatus"
+          class="roulette-status"
+        >
+          Preparando abertura...
+        </p>
+      </div>
+
+      <div
+        id="secondPrizeResult"
+        class="prize-result hidden"
+      >
+        <p class="rare-label">
+          ✨ ITEM RARO ENCONTRADO ✨
+        </p>
+
+        <div class="prize-card secret-prize-card">
+          <div class="secret-gift-icon">
+            🌈
+          </div>
+
+          <h3>
+            Presente secreto
+          </h3>
+
+          <p>
+            O conteúdo deste arquivo continua protegido.
+            Vá para a próxima aba para revelar o presente.
+          </p>
+        </div>
+
+        <button
+          class="outline-btn"
+          type="button"
+          onclick="openSecondGift()"
+        >
+          IR PARA A PRÓXIMA ABA ›
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 14: SEGUNDO PRESENTE -->
+
+  <section id="secondGiftScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · GIFT REVEAL 02
+    </div>
+
+    <div class="gift-screen-container">
+      <p class="system-label">
+        CAPÍTULO 09 · ARQUIVO REVELADO
+      </p>
+
+      <h2 class="gift-screen-title">
+        Presente secreto desbloqueado
+      </h2>
+
+      <div class="single-gift-card">
+        <div class="single-gift-image-box">
+          <img
+            src="./assets/presente2.png"
+            alt="Dissipador de SSD Led Argb"
+            class="single-gift-image"
+          />
+        </div>
+
+        <span class="gift-file-label">
+          ITEM RARO · PRESENTE 02
+        </span>
+
+        <h3>
+          Dissipador de SSD Led Argb
+        </h3>
+
+        <p>
+          O segundo presente foi revelado com sucesso:
+          um Dissipador de SSD Led Argb preparado
+          especialmente para você.
+        </p>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openSecondGiftMessage()"
+      >
+        CONTINUAR A SURPRESA ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 15: FOTO E TEXTO DO SEGUNDO PRESENTE -->
+
+  <section id="secondGiftMessageScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · SPECIAL MESSAGE 02
+    </div>
+
+    <div class="photo-message-container">
+      <p class="system-label">
+        CAPÍTULO 10 · MENSAGEM SOBRE O PRESENTE
+      </p>
+
+      <div class="photo-message-card">
+        <div class="photo-box">
+          <img
+            src="./assets/Foto especial.jpg"
+            alt="Foto especial do segundo presente"
+            class="special-photo"
+          />
+        </div>
+
+        <div class="message-box">
+          <div class="chapter-number">
+            10
+          </div>
+
+          <h2 class="chapter-title">
+            Sobre esse presente...
+          </h2>
+
+          <p class="chapter-text">
+            Então, nego, lembra quando eu te mostrei isso e você gostou muito? 😅
+            Você sempre fala que gosta de ter um PC todo RGB pra ganhar mais FPS. 😂✨
+          </p>
+
+          <p class="chapter-text">
+            Então, esse é o seu segundo presente! 🎁❤️
+            Ainda tem mais um, que vai ser o próximo. 🤭
+          </p>
+
+          <p class="chapter-text">
+            Espero de coração que você tenha gostado desse presente.
+            É simples, mas foi dado com muito carinho. 💖
+          </p>
+        </div>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openFourthVideo()"
+      >
+        ASSISTIR PRÓXIMO VÍDEO ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 16: QUARTO VÍDEO -->
+
+  <section id="fourthVideoScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · VIDEO FILE 04
+    </div>
+
+    <div class="video-container">
+      <p class="system-label">
+        CAPÍTULO 11 · QUARTA MEMÓRIA
+      </p>
+
+      <h2 class="video-title">
+        Mais um vídeo foi encontrado...
+      </h2>
+
+      <div class="video-card">
+        <video
+          id="fourthVideo"
+          class="surprise-video"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="./assets/video4.mp4.MOV"
+            type="video/mp4"
+          />
+
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+
+      <p class="video-text">
+        Aperte o play e continue essa surpresa.
+        O próximo presente ainda está esperando por você.
+      </p>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openFinalGiftIntro()"
+      >
+        DESBLOQUEAR ÚLTIMO PRESENTE ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 17: INTRODUÇÃO AO ÚLTIMO PRESENTE -->
+
+  <section id="finalGiftIntroScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · FINAL GIFT
+    </div>
+
+    <div class="chapter-container">
+      <p class="system-label">
+        CAPÍTULO 12 · ÚLTIMO ARQUIVO SECRETO
+      </p>
+
+      <div class="chapter-card final-chapter-card">
+        <div class="chapter-number">
+          12
+        </div>
+
+        <h2 class="chapter-title">
+          O sistema encontrou o último presente...
+        </h2>
+
+        <p class="chapter-text">
+          Depois de todas as mensagens, lembranças e surpresas,
+          ainda existe mais um arquivo protegido esperando por você.
+        </p>
+
+        <p class="chapter-text">
+          Este é o último presente da missão. Para descobrir o que é,
+          será necessário iniciar a roleta final.
+        </p>
+
+        <p class="chapter-text">
+          Respira fundo, nego... o sistema está quase concluindo
+          essa surpresa. ❤️
+        </p>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openFinalCaseScreen()"
+      >
+        ACESSAR ROLETA FINAL ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 18: ROLETA DO ÚLTIMO PRESENTE -->
+
+  <section id="finalCaseScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · FINAL MYSTERY CASE
+    </div>
+
+    <div class="case-container">
+      <p class="system-label">
+        ARQUIVO ULTRASSECRETO · PRESENTE 03
+      </p>
+
+      <h2 class="case-title">
+        O último presente foi localizado
+      </h2>
+
+      <p class="case-text">
+        Clique na caixa final e aguarde o sistema revelar o arquivo vencedor.
+      </p>
+
+      <button
+        id="finalCaseButton"
+        class="final-case-box"
+        type="button"
+        onclick="openFinalCase()"
+      >
+        <span class="final-case-icon">🎁</span>
+
+        <strong>
+          PRESENTE FINAL
+        </strong>
+
+        <small>
+          CLIQUE PARA DESBLOQUEAR
+        </small>
+      </button>
+
+      <div
+        id="finalRouletteArea"
+        class="roulette-area hidden"
+      >
+        <div class="roulette-pointer"></div>
+
+        <div class="roulette-window">
+          <div
+            id="finalRouletteTrack"
+            class="roulette-track"
+          ></div>
+        </div>
+
+        <p
+          id="finalRouletteStatus"
+          class="roulette-status"
+        >
+          Preparando roleta final...
+        </p>
+      </div>
+
+      <div
+        id="finalPrizeResult"
+        class="prize-result hidden"
+      >
+        <p class="rare-label">
+          👑 ITEM LENDÁRIO ENCONTRADO 👑
+        </p>
+
+        <div class="prize-card secret-prize-card">
+          <div class="secret-gift-icon">
+            🎁
+          </div>
+
+          <h3>
+            Último presente desbloqueado
+          </h3>
+
+          <p>
+            O arquivo final foi identificado com sucesso.
+            Vá para a próxima tela para revelar o presente.
+          </p>
+        </div>
+
+        <button
+          class="outline-btn"
+          type="button"
+          onclick="openThirdGift()"
+        >
+          REVELAR ÚLTIMO PRESENTE ›
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 19: TERCEIRO PRESENTE -->
+
+  <section id="thirdGiftScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · GIFT REVEAL 03
+    </div>
+
+    <div class="gift-screen-container">
+      <p class="system-label">
+        CAPÍTULO 13 · ÚLTIMO PRESENTE
+      </p>
+
+      <h2 class="gift-screen-title">
+        Último presente desbloqueado
+      </h2>
+
+      <div class="single-gift-card legendary-gift-card">
+        <div class="single-gift-image-box">
+          <img
+            src="./assets/presente3.png"
+            alt="Cabo Extensor de Fonte Sleeved 24p ARGB Preto"
+            class="single-gift-image"
+          />
+        </div>
+
+        <span class="gift-file-label">
+          ITEM LENDÁRIO · PRESENTE 03
+        </span>
+
+        <h3>
+          Cabo Extensor de Fonte Sleeved 24p ARGB Preto
+        </h3>
+
+        <p>
+          O último presente foi revelado com sucesso:
+          um Cabo Extensor de Fonte Sleeved 24p ARGB Preto
+          preparado especialmente para você, com muito carinho. ❤️
+        </p>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openFinalMessage()"
+      >
+        LER A ÚLTIMA MENSAGEM ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 20: FOTO E TEXTO FINAL -->
+
+  <section id="finalMessageScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · FINAL MESSAGE
+    </div>
+
+    <div class="photo-message-container">
+      <p class="system-label">
+        CAPÍTULO 14 · ÚLTIMA MENSAGEM
+      </p>
+
+      <div class="photo-message-card final-message-card">
+        <div class="photo-box">
+          <img
+            src="./assets/foto-final.jpg"
+            alt="Nossa foto final"
+            class="special-photo"
+          />
+        </div>
+
+        <div class="message-box">
+          <div class="chapter-number">
+            14
+          </div>
+
+          <h2 class="chapter-title">
+            Antes de terminar...
+          </h2>
+
+          <p class="chapter-text">
+            Então, nego, chegamos ao último presente e quase ao final
+            dessa surpresa. Eu fiz tudo isso pensando em você e em todos
+            os momentos fodas que a gente já viveu.
+          </p>
+
+          <p class="chapter-text">
+            Espero que você tenha gostado de cada detalhe, dos vídeos,
+            das mensagens e dos presentes. Pode até parecer algo simples,
+            mas foi feito de coração e com muito carinho. ❤️
+          </p>
+
+          <p class="chapter-text">
+            Obrigado por ser essa pessoa tão importante na minha vida.
+            Que esse novo ciclo seja cheio de conquistas, felicidade,
+            saúde, dinheiro e muito RGB para ganhar mais FPS. 😂✨
+          </p>
+
+          <p class="chapter-text">
+            Feliz aniversário, nego! Te amo e espero continuar vivendo
+            muitos momentos ao seu lado. 💙
+          </p>
+        </div>
+      </div>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openFinalVideo()"
+      >
+        ASSISTIR AO ÚLTIMO VÍDEO ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 21: ÚLTIMO VÍDEO -->
+
+  <section id="finalVideoScreen" class="screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · FINAL VIDEO
+    </div>
+
+    <div class="video-container">
+      <p class="system-label">
+        CAPÍTULO 15 · ÚLTIMA MEMÓRIA
+      </p>
+
+      <h2 class="video-title">
+        O último vídeo da surpresa...
+      </h2>
+
+      <div class="video-card final-video-card">
+        <video
+          id="finalVideo"
+          class="surprise-video"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="./assets/video5.mp4.MOV"
+            type="video/mp4"
+          />
+
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+
+      <p class="video-text">
+        Aperte o play e aproveite o último arquivo preparado
+        especialmente para você.
+      </p>
+
+      <button
+        class="outline-btn"
+        type="button"
+        onclick="openEndingScreen()"
+      >
+        FINALIZAR SURPRESA ›
+      </button>
+    </div>
+  </section>
+
+  <!-- TELA 22: ENCERRAMENTO -->
+
+  <section id="endingScreen" class="screen birthday-screen">
+    <div class="top-pill">
+      ● BIRTHDAY SURPRISE SYSTEM · MISSION COMPLETE
+    </div>
+
+    <div class="birthday-card ending-card">
+      <p class="system-label">
+        MISSÃO CONCLUÍDA
+      </p>
+
+      <div class="ending-icon">
+        🎉
+      </div>
+
+      <h2 class="ending-title">
+        Feliz aniversário, nego!
+      </h2>
+
+      <p class="subtitle">
+        Todos os arquivos foram desbloqueados, todos os presentes
+        foram revelados e a surpresa foi concluída com sucesso.
+      </p>
+
+      <p class="ending-love">
+        Feito com muito carinho para você. ❤️
+      </p>
+
+      <button
+        class="main-btn"
+        type="button"
+        onclick="restartSurprise()"
+      >
+        RECOMEÇAR SURPRESA
+      </button>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
 </body>
 </html>
