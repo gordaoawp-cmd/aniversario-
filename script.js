@@ -37,6 +37,13 @@ const finalMessageScreen = document.getElementById(
   "finalMessageScreen"
 );
 const finalVideoScreen = document.getElementById("finalVideoScreen");
+const sixthVideoScreen = document.getElementById("sixthVideoScreen");
+const closingMessageScreen = document.getElementById(
+  "closingMessageScreen"
+);
+const closingMessagePartTwoScreen = document.getElementById(
+  "closingMessagePartTwoScreen"
+);
 const endingScreen = document.getElementById("endingScreen");
 
 const daysEl = document.getElementById("days");
@@ -52,7 +59,7 @@ const enteringText = document.getElementById("enteringText");
 const confettiContainer = document.getElementById("confettiContainer");
 
 /*
-  true = libera o site após 10 segundos.
+  true = modo de teste: libera o site após 10 segundos.
   false = usa a data real do aniversário.
 */
 const testMode = false;
@@ -332,9 +339,14 @@ function startBootSequence() {
 }
 
 function startCountdown() {
-  birthdayDate = testMode
-    ? new Date(Date.now() + 10000)
-    : new Date(2026, 6, 29, 19, 0, 0);
+  if (testMode) {
+    // MODO DE TESTE: libera o site após 10 segundos.
+    birthdayDate = new Date(Date.now() + 10 * 1000);
+  } else {
+    // DATA REAL: 29 de julho de 2026, às 19:00.
+    // O mês 6 representa julho, porque no JavaScript janeiro é 0.
+    birthdayDate = new Date(2026, 6, 29, 19, 0, 0);
+  }
 
   updateCountdown();
 
@@ -1205,11 +1217,68 @@ function openFinalVideo() {
   }
 }
 
-function openEndingScreen() {
+function openSixthVideo() {
   const finalVideo = document.getElementById("finalVideo");
 
   if (finalVideo) {
     finalVideo.pause();
+  }
+
+  if (!sixthVideoScreen) {
+    console.error(
+      'A tela "sixthVideoScreen" não foi encontrada no HTML.'
+    );
+    return;
+  }
+
+  showScreen(sixthVideoScreen);
+
+  const sixthVideo = document.getElementById("sixthVideo");
+
+  if (sixthVideo) {
+    sixthVideo.pause();
+    sixthVideo.currentTime = 0;
+  }
+}
+
+function openClosingMessage() {
+  const sixthVideo = document.getElementById("sixthVideo");
+
+  if (sixthVideo) {
+    sixthVideo.pause();
+  }
+
+  if (!closingMessageScreen) {
+    console.error(
+      'A tela "closingMessageScreen" não foi encontrada no HTML.'
+    );
+    return;
+  }
+
+  showScreen(closingMessageScreen);
+}
+
+function openClosingMessagePartTwo() {
+  if (!closingMessagePartTwoScreen) {
+    console.error(
+      'A tela "closingMessagePartTwoScreen" não foi encontrada no HTML.'
+    );
+    return;
+  }
+
+  showScreen(closingMessagePartTwoScreen);
+}
+
+function openEndingScreen() {
+  const finalVideo = document.getElementById("finalVideo");
+  const sixthVideo = document.getElementById("sixthVideo");
+
+  if (finalVideo) {
+    finalVideo.pause();
+  }
+
+  if (sixthVideo) {
+    sixthVideo.pause();
   }
 
   showScreen(endingScreen);
